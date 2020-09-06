@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BetweenUsDbModelStoreContainer" CdmEntityContainer="BetweenUsDbEntities">
+    <EntitySetMapping Name="tblFriendRequests">
+      <EntityTypeMapping TypeName="BetweenUsDbModel.tblFriendRequest">
+        <MappingFragment StoreEntitySet="tblFriendRequests">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DateOfCreating" ColumnName="DateOfCreating" />
+          <ScalarProperty Name="Accepted" ColumnName="Accepted" />
+          <ScalarProperty Name="FKRequestSender" ColumnName="FKRequestSender" />
+          <ScalarProperty Name="FKRequestReceiver" ColumnName="FKRequestReceiver" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPosts">
+      <EntityTypeMapping TypeName="BetweenUsDbModel.tblPost">
+        <MappingFragment StoreEntitySet="tblPosts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DateTimeOfPosting" ColumnName="DateTimeOfPosting" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="NumberOfLikes" ColumnName="NumberOfLikes" />
+          <ScalarProperty Name="FKUserThatPosted" ColumnName="FKUserThatPosted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUsers">
+      <EntityTypeMapping TypeName="BetweenUsDbModel.tblUser">
+        <MappingFragment StoreEntitySet="tblUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUsersThatLikedPosts">
+      <EntityTypeMapping TypeName="BetweenUsDbModel.tblUsersThatLikedPost">
+        <MappingFragment StoreEntitySet="tblUsersThatLikedPost">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FKPost" ColumnName="FKPost" />
+          <ScalarProperty Name="FKUser" ColumnName="FKUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -13,3 +13,15 @@ C:\Users\Pipi\Desktop\nedeljni 5\Nedeljni_V_Nemanja_Pilipovic\Zadatak_1\obj\Debu
 C:\Users\Pipi\Desktop\nedeljni 5\Nedeljni_V_Nemanja_Pilipovic\Zadatak_1\obj\Debug\Zadatak_1.csproj.CoreCompileInputs.cache
 C:\Users\Pipi\Desktop\nedeljni 5\Nedeljni_V_Nemanja_Pilipovic\Zadatak_1\obj\Debug\Zadatak_1.exe
 C:\Users\Pipi\Desktop\nedeljni 5\Nedeljni_V_Nemanja_Pilipovic\Zadatak_1\obj\Debug\Zadatak_1.pdb
+C:\Users\Pipi\Desktop\nedeljni 5\Nedeljni_V_Nemanja_Pilipovic\Zadatak_1\obj\Debug\Zadatak_1_Content.g.cs
+C:\Users\Pipi\Desktop\nedeljni 5\Nedeljni_V_Nemanja_Pilipovic\Zadatak_1\bin\Debug\EntityFramework.dll
+C:\Users\Pipi\Desktop\nedeljni 5\Nedeljni_V_Nemanja_Pilipovic\Zadatak_1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Pipi\Desktop\nedeljni 5\Nedeljni_V_Nemanja_Pilipovic\Zadatak_1\bin\Debug\EntityFramework.xml
+C:\Users\Pipi\Desktop\nedeljni 5\Nedeljni_V_Nemanja_Pilipovic\Zadatak_1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Pipi\Desktop\nedeljni 5\Nedeljni_V_Nemanja_Pilipovic\Zadatak_1\obj\Debug\Zadatak_1.csproj.CopyComplete
+C:\Users\Pipi\Desktop\nedeljni 5\Nedeljni_V_Nemanja_Pilipovic\Zadatak_1\obj\Debug\Views\RegisterView.g.cs
+C:\Users\Pipi\Desktop\nedeljni 5\Nedeljni_V_Nemanja_Pilipovic\Zadatak_1\obj\Debug\Views\RegisterView.baml
+C:\Users\Pipi\Desktop\nedeljni 5\Nedeljni_V_Nemanja_Pilipovic\Zadatak_1\obj\Debug\Views\UserView.g.cs
+C:\Users\Pipi\Desktop\nedeljni 5\Nedeljni_V_Nemanja_Pilipovic\Zadatak_1\obj\Debug\Views\UserView.baml
+C:\Users\Pipi\Desktop\nedeljni 5\Nedeljni_V_Nemanja_Pilipovic\Zadatak_1\obj\Debug\Views\ManagerFriendsView.g.cs
+C:\Users\Pipi\Desktop\nedeljni 5\Nedeljni_V_Nemanja_Pilipovic\Zadatak_1\obj\Debug\Views\ManagerFriendsView.baml

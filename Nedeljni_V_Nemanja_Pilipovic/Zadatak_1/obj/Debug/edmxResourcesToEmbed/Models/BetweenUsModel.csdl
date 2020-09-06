@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BetweenUsDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblFriendRequest">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateOfCreating" Type="DateTime" Precision="3" />
+    <Property Name="Accepted" Type="Boolean" />
+    <Property Name="FKRequestSender" Type="Int32" />
+    <Property Name="FKRequestReceiver" Type="Int32" />
+    <NavigationProperty Name="tblUser" Relationship="Self.FK__tblFriend__FKReq__7A672E12" FromRole="tblFriendRequests" ToRole="tblUsers" />
+    <NavigationProperty Name="tblUser1" Relationship="Self.FK__tblFriend__FKReq__7B5B524B" FromRole="tblFriendRequests" ToRole="tblUsers" />
+  </EntityType>
+  <EntityType Name="tblPost">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateTimeOfPosting" Type="DateTime" Precision="3" />
+    <Property Name="Content" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NumberOfLikes" Type="Int32" />
+    <Property Name="FKUserThatPosted" Type="Int32" />
+    <NavigationProperty Name="tblPosts1" Relationship="Self.FK__tblPosts__FKUser__7C4F7684" FromRole="tblPosts" ToRole="tblPosts1" />
+    <NavigationProperty Name="tblPost1" Relationship="Self.FK__tblPosts__FKUser__7C4F7684" FromRole="tblPosts1" ToRole="tblPosts" />
+    <NavigationProperty Name="tblUsersThatLikedPosts" Relationship="Self.FK__tblUsersT__FKPos__7D439ABD" FromRole="tblPosts" ToRole="tblUsersThatLikedPost" />
+  </EntityType>
+  <EntityType Name="tblUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Username" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tblFriendRequests" Relationship="Self.FK__tblFriend__FKReq__7A672E12" FromRole="tblUsers" ToRole="tblFriendRequests" />
+    <NavigationProperty Name="tblFriendRequests1" Relationship="Self.FK__tblFriend__FKReq__7B5B524B" FromRole="tblUsers" ToRole="tblFriendRequests" />
+    <NavigationProperty Name="tblUsersThatLikedPosts" Relationship="Self.FK__tblUsersT__FKUse__7E37BEF6" FromRole="tblUsers" ToRole="tblUsersThatLikedPost" />
+  </EntityType>
+  <EntityType Name="tblUsersThatLikedPost">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FKPost" Type="Int32" />
+    <Property Name="FKUser" Type="Int32" />
+    <NavigationProperty Name="tblPost" Relationship="Self.FK__tblUsersT__FKPos__7D439ABD" FromRole="tblUsersThatLikedPost" ToRole="tblPosts" />
+    <NavigationProperty Name="tblUser" Relationship="Self.FK__tblUsersT__FKUse__7E37BEF6" FromRole="tblUsersThatLikedPost" ToRole="tblUsers" />
+  </EntityType>
+  <Association Name="FK__tblFriend__FKReq__7A672E12">
+    <End Role="tblUsers" Type="Self.tblUser" Multiplicity="0..1" />
+    <End Role="tblFriendRequests" Type="Self.tblFriendRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblFriendRequests">
+        <PropertyRef Name="FKRequestSender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblFriend__FKReq__7B5B524B">
+    <End Role="tblUsers" Type="Self.tblUser" Multiplicity="0..1" />
+    <End Role="tblFriendRequests" Type="Self.tblFriendRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblFriendRequests">
+        <PropertyRef Name="FKRequestReceiver" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblPosts__FKUser__7C4F7684">
+    <End Role="tblPosts" Type="Self.tblPost" Multiplicity="0..1" />
+    <End Role="tblPosts1" Type="Self.tblPost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPosts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblPosts1">
+        <PropertyRef Name="FKUserThatPosted" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblUsersT__FKPos__7D439ABD">
+    <End Role="tblPosts" Type="Self.tblPost" Multiplicity="0..1" />
+    <End Role="tblUsersThatLikedPost" Type="Self.tblUsersThatLikedPost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPosts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUsersThatLikedPost">
+        <PropertyRef Name="FKPost" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblUsersT__FKUse__7E37BEF6">
+    <End Role="tblUsers" Type="Self.tblUser" Multiplicity="0..1" />
+    <End Role="tblUsersThatLikedPost" Type="Self.tblUsersThatLikedPost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUsersThatLikedPost">
+        <PropertyRef Name="FKUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BetweenUsDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblFriendRequests" EntityType="Self.tblFriendRequest" />
+    <EntitySet Name="tblPosts" EntityType="Self.tblPost" />
+    <EntitySet Name="tblUsers" EntityType="Self.tblUser" />
+    <EntitySet Name="tblUsersThatLikedPosts" EntityType="Self.tblUsersThatLikedPost" />
+    <AssociationSet Name="FK__tblFriend__FKReq__7A672E12" Association="Self.FK__tblFriend__FKReq__7A672E12">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblFriendRequests" EntitySet="tblFriendRequests" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblFriend__FKReq__7B5B524B" Association="Self.FK__tblFriend__FKReq__7B5B524B">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblFriendRequests" EntitySet="tblFriendRequests" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblPosts__FKUser__7C4F7684" Association="Self.FK__tblPosts__FKUser__7C4F7684">
+      <End Role="tblPosts" EntitySet="tblPosts" />
+      <End Role="tblPosts1" EntitySet="tblPosts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblUsersT__FKPos__7D439ABD" Association="Self.FK__tblUsersT__FKPos__7D439ABD">
+      <End Role="tblPosts" EntitySet="tblPosts" />
+      <End Role="tblUsersThatLikedPost" EntitySet="tblUsersThatLikedPosts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblUsersT__FKUse__7E37BEF6" Association="Self.FK__tblUsersT__FKUse__7E37BEF6">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblUsersThatLikedPost" EntitySet="tblUsersThatLikedPosts" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
